@@ -14,15 +14,10 @@ public class tdarray{
 				mat[i][j]=s.nextInt();
 		System.out.print("Enter the element to be searched: ");
 		int key=s.nextInt();
-		int rindex=0,cindex=0;
+		int rindex=m+1,cindex=n+1;
 		for(int i=0;i<m-1;i++)
 		{
-			if(key>mat[i][0]&&key<mat[i+1][0])
-			{
-				rindex=i;
-				break;
-			}
-			else if(key==mat[i][0])
+			if(key>=mat[i][0]&&key<mat[i+1][0])
 			{
 				rindex=i;
 				break;
@@ -37,7 +32,7 @@ public class tdarray{
 			}
 		}
 		int row=rindex+1,col=cindex+1;
-		if(mat[rindex][cindex]==key)
+		if(cindex<n)
 			System.out.print("Row: "+row+"\nCol: "+col+"\n");
 	}
 }
